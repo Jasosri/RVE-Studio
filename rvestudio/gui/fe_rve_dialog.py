@@ -42,6 +42,9 @@ class FERVEDialog(QDialog):
         self._drag_start = None
         self._drag_rect = None
         self._busy = False
+        # The spin boxes show the centre to 3 decimals; the exact value computed by snapping or
+        # drawing is kept here so the rounding cannot cut a sliver off a wall.
+        self._exact_centre = None
         self._ok_spec = None
         self._note = ""
         start = normalise_fe_rve_spec(getattr(model, "fe_rve", None))
@@ -137,8 +140,7 @@ class FERVEDialog(QDialog):
         self.n1.setValue(int(n1))
         self.n2.setValue(int(n2))
         centre = (start or {}).get("centre") or self.layout_data["auto_centre"]
-        self.cx.setValue(float(centre[0]))
-        self.cy.setValue(float(centre[1]))
+        self._show_centre(centre)
         if start and start["mode"] == CELLS:
             k = self.centre_cell.findData(int(start.get("centre_cell", 0)))
             self.centre_cell.setCurrentIndex(max(k, 0))
@@ -169,8 +171,20 @@ class FERVEDialog(QDialog):
         if m == CELLS:
             return normalise_fe_rve_spec({"mode": CELLS, "cells": cells,
                                           "centre_cell": int(self.centre_cell.currentData() or 0)})
-        return normalise_fe_rve_spec({"mode": WINDOW, "cells": cells,
-                                      "centre": [self.cx.value(), self.cy.value()]})
+        return normalise_fe_rve_spec({"mode": WINDOW, "cells": cells, "centre": self._centre()})
+
+    def _show_centre(self, centre) -> None:
+        """Put a centre in the spin boxes and remember its exact value."""
+        self.cx.setValue(float(centre[0]))
+        self.cy.setValue(float(centre[1]))
+        self._exact_centre = ([float(centre[0]), float(centre[1])], (self.cx.value(), self.cy.value()))
+
+    def _centre(self) -> list[float]:
+        """The exact centre, unless the user has since typed a different one."""
+        shown = (self.cx.value(), self.cy.value())
+        if self._exact_centre is not None and self._exact_centre[1] == shown:
+            return list(self._exact_centre[0])
+        return [shown[0], shown[1]]
 
     def spec(self) -> dict | None:
         """The accepted choice (None = automatic)."""
@@ -192,14 +206,13 @@ class FERVEDialog(QDialog):
             if n2 is not None:
                 self.n2.setValue(int(n2))
             if centre is not None:
-                self.cx.setValue(float(centre[0]))
-                self.cy.setValue(float(centre[1]))
+                self._show_centre(centre)
         finally:
             self._busy = False
 
     def _snap_now(self) -> None:
         spec, self._note = centred_window(self.model, self.layout_data, [self.n1.value(), self.n2.value()],
-                                          [self.cx.value(), self.cy.value()], snap=True)
+                                          self._centre(), snap=True)
         self._set_quiet(centre=spec["centre"])
         if self.mode() != WINDOW:
             self.rb_window.setChecked(True)
