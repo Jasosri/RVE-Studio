@@ -18,8 +18,8 @@ jobs:
     env:
       QT_QPA_PLATFORM: offscreen
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Qt system libraries
@@ -54,8 +54,8 @@ jobs:
     runs-on: windows-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Build the application
@@ -82,7 +82,7 @@ jobs:
           if (-not $iscc) { $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" }
           & $iscc "/DAppVersion=$v" installer\RVE_Studio.iss
           if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed" }
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: RVE_Studio_Windows_installer
           path: dist/RVE_Studio_Setup_*.exe

@@ -392,12 +392,16 @@ def test_help_page_only_opens_the_two_guides_when_qt_is_available(monkeypatch):
     pytest.importorskip("PySide6")
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
     from PySide6.QtWidgets import QApplication
-    from PySide6.QtGui import QDesktopServices
-    from rvestudio.gui.main_window import MainWindow
+    import rvestudio.gui.main_window as mw
     app = QApplication.instance() or QApplication([])
     opened = []
-    monkeypatch.setattr(QDesktopServices, "openUrl", staticmethod(lambda url: opened.append(url.toLocalFile()) or True))
-    window = MainWindow()
+
+    class FakeDesktop:                       # never start a PDF viewer on the test machine
+        @staticmethod
+        def openUrl(url):
+            opened.append(url.toLocalFile()); return True
+    monkeypatch.setattr(mw, "QDesktopServices", FakeDesktop)
+    window = mw.MainWindow()
     assert set(window.help_page.guide_buttons) == {"user", "theory"}
     window.help_page.guide_buttons["theory"].click()
     assert opened and opened[-1].endswith("RVE_Studio_Theory_Guide.pdf")
