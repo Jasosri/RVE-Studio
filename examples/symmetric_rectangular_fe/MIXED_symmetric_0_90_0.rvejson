@@ -1,0 +1,158 @@
+{
+  "model": {
+    "name": "MIXED_symmetric_0_90_0",
+    "nodes": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        149.66629547095766
+      ],
+      [
+        100.0,
+        0.0
+      ],
+      [
+        100.0,
+        149.66629547095766
+      ],
+      [
+        0.0,
+        74.83314773547883
+      ],
+      [
+        100.0,
+        74.83314773547883
+      ],
+      [
+        50.0,
+        74.83314773547883
+      ]
+    ],
+    "a1": [
+      100.0,
+      0.0
+    ],
+    "a2": [
+      0.0,
+      149.66629547095766
+    ],
+    "height": 150.0,
+    "periodic_tol": 1e-08,
+    "anchor_node": 0,
+    "fix_anchor_rotation": false,
+    "periodic_pairs": null,
+    "wall_element_type": "paper",
+    "strip_bending_mode": "cylindrical",
+    "length_unit": "mm",
+    "gravity": 9.80665,
+    "elements": [
+      {
+        "node_i": 1,
+        "node_j": 6,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 3,
+        "node_j": 6,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 0,
+        "node_j": 6,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 2,
+        "node_j": 6,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 4,
+        "node_j": 6,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 6,
+        "node_j": 5,
+        "laminate": 0,
+        "weight": 1.0
+      }
+    ],
+    "wall_groups": [
+      "diag-top-left",
+      "diag-top-right",
+      "diag-bottom-left",
+      "diag-bottom-right",
+      "horizontal-left",
+      "horizontal-right"
+    ]
+  },
+  "materials": [
+    {
+      "name": "Boron/Epoxy",
+      "E1": 204000,
+      "E2": 18500,
+      "G12": 5590,
+      "nu12": 0.23,
+      "Gth": 5590,
+      "density_kg_m3": 2080,
+      "source": "",
+      "source_url": "",
+      "cost_per_kg": NaN
+    },
+    {
+      "name": "E-glass/Epoxy",
+      "E1": 38600,
+      "E2": 8270,
+      "G12": 4140,
+      "nu12": 0.26,
+      "Gth": 4140,
+      "density_kg_m3": 1800,
+      "source": "",
+      "source_url": "",
+      "cost_per_kg": NaN
+    },
+    {
+      "name": "Carbon/Epoxy example",
+      "E1": 131000,
+      "E2": 10300,
+      "G12": 6900,
+      "nu12": 0.22,
+      "Gth": 6900,
+      "density_kg_m3": NaN,
+      "source": "",
+      "source_url": "",
+      "cost_per_kg": NaN
+    }
+  ],
+  "laminates": [
+    {
+      "name": "Symmetric 0/90/0 E-glass/Epoxy",
+      "plies": [
+        {
+          "material": "E-glass/Epoxy",
+          "angle_deg": 0,
+          "thickness": 0.5
+        },
+        {
+          "material": "E-glass/Epoxy",
+          "angle_deg": 90,
+          "thickness": 0.5
+        },
+        {
+          "material": "E-glass/Epoxy",
+          "angle_deg": 0,
+          "thickness": 0.5
+        }
+      ]
+    }
+  ]
+}

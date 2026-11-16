@@ -1,0 +1,41 @@
+[
+  {
+    "active": true,
+    "name": "E-glass/Epoxy",
+    "E1": 38600,
+    "E2": 8270,
+    "G12": 4140,
+    "nu12": 0.26,
+    "Gth": 4140,
+    "density_kg_m3": 1800,
+    "source": "Source-matched published lamina property table",
+    "source_url": "https://citeseerx.ist.psu.edu/document?doi=520a4c1f50739fb802eba043be3e75c8527f1246&repid=rep1&type=pdf",
+    "cost_per_kg": 1.0
+  },
+  {
+    "active": true,
+    "name": "Boron/Epoxy",
+    "E1": 204000,
+    "E2": 18500,
+    "G12": 5590,
+    "nu12": 0.23,
+    "Gth": 5590,
+    "density_kg_m3": 2080,
+    "source": "Source-matched published lamina property table",
+    "source_url": "https://citeseerx.ist.psu.edu/document?doi=520a4c1f50739fb802eba043be3e75c8527f1246&repid=rep1&type=pdf",
+    "cost_per_kg": 3.0
+  },
+  {
+    "active": false,
+    "name": "Carbon/Epoxy example",
+    "E1": 131000,
+    "E2": 10300,
+    "G12": 6900,
+    "nu12": 0.22,
+    "Gth": 6900,
+    "density_kg_m3": null,
+    "source": "Existing example; verify density before mass calculations",
+    "source_url": "",
+    "cost_per_kg": 2.0
+  }
+]

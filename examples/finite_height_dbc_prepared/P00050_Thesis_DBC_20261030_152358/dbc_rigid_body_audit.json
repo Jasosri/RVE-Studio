@@ -1,0 +1,238 @@
+{
+  "Q11": {
+    "pre_stabilization_rank": 5,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [
+      [
+        -3.9489629769767194e-15,
+        1.937292699962428e-15,
+        0.9999999999999999,
+        1.1102230246251565e-16,
+        5.718374236816827e-17,
+        1.2945436214700618e-17
+      ]
+    ],
+    "post_nullspace": [],
+    "added_gauge_constraints": [
+      {
+        "node": 1,
+        "dof": 3,
+        "value": 0.0,
+        "rank_before": 5,
+        "rank_after": 6
+      }
+    ],
+    "singular_values_before": [
+      566.8626960053342,
+      498.0193034693817,
+      177.2924732462066,
+      2.9619878243485656,
+      1.8875401471154036,
+      1.889776884899774e-14
+    ],
+    "singular_values_after": [
+      567.2105980304809,
+      499.56591550921144,
+      177.65766216266465,
+      2.989150564573951,
+      1.8903206009567637,
+      0.9837607290751266
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  },
+  "Q22": {
+    "pre_stabilization_rank": 5,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [
+      [
+        -3.9489629769767194e-15,
+        1.937292699962428e-15,
+        0.9999999999999999,
+        1.1102230246251565e-16,
+        5.718374236816827e-17,
+        1.2945436214700618e-17
+      ]
+    ],
+    "post_nullspace": [],
+    "added_gauge_constraints": [
+      {
+        "node": 1,
+        "dof": 3,
+        "value": 0.0,
+        "rank_before": 5,
+        "rank_after": 6
+      }
+    ],
+    "singular_values_before": [
+      566.8626960053342,
+      498.0193034693817,
+      177.2924732462066,
+      2.9619878243485656,
+      1.8875401471154036,
+      1.889776884899774e-14
+    ],
+    "singular_values_after": [
+      567.2105980304809,
+      499.56591550921144,
+      177.65766216266465,
+      2.989150564573951,
+      1.8903206009567637,
+      0.9837607290751266
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  },
+  "Q12": {
+    "pre_stabilization_rank": 5,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [
+      [
+        -3.9489629769767194e-15,
+        1.937292699962428e-15,
+        0.9999999999999999,
+        1.1102230246251565e-16,
+        5.718374236816827e-17,
+        1.2945436214700618e-17
+      ]
+    ],
+    "post_nullspace": [],
+    "added_gauge_constraints": [
+      {
+        "node": 1,
+        "dof": 3,
+        "value": 0.0,
+        "rank_before": 5,
+        "rank_after": 6
+      }
+    ],
+    "singular_values_before": [
+      566.8626960053342,
+      498.0193034693817,
+      177.2924732462066,
+      2.9619878243485656,
+      1.8875401471154036,
+      1.889776884899774e-14
+    ],
+    "singular_values_after": [
+      567.2105980304809,
+      499.56591550921144,
+      177.65766216266465,
+      2.989150564573951,
+      1.8903206009567637,
+      0.9837607290751266
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  },
+  "Q66": {
+    "pre_stabilization_rank": 5,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [
+      [
+        -3.2405039351099276e-15,
+        8.499029350212666e-15,
+        1.0,
+        1.2753591342306939e-16,
+        2.9795836481223885e-17,
+        -3.0653446065310306e-17
+      ]
+    ],
+    "post_nullspace": [],
+    "added_gauge_constraints": [
+      {
+        "node": 1,
+        "dof": 3,
+        "value": 0.0,
+        "rank_before": 5,
+        "rank_after": 6
+      }
+    ],
+    "singular_values_before": [
+      762.2894246169003,
+      557.2207224681645,
+      325.6804163722261,
+      3.9610717791315637,
+      2.734203954645388,
+      8.953402722766985e-15
+    ],
+    "singular_values_after": [
+      762.4135021982884,
+      558.6782341499415,
+      326.0661296744686,
+      3.9747193837129084,
+      2.752921797869931,
+      0.9858799882978893
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  },
+  "Q44": {
+    "pre_stabilization_rank": 6,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [],
+    "post_nullspace": [],
+    "added_gauge_constraints": [],
+    "singular_values_before": [
+      1048.641271944782,
+      977.5382358813032,
+      459.3934960234785,
+      7.041674524498657,
+      4.6877767246807105,
+      4.600483773144146
+    ],
+    "singular_values_after": [
+      1048.641271944782,
+      977.5382358813032,
+      459.3934960234785,
+      7.041674524498657,
+      4.6877767246807105,
+      4.600483773144146
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  },
+  "Q55": {
+    "pre_stabilization_rank": 6,
+    "post_stabilization_rank": 6,
+    "required_rank": 6,
+    "pre_nullspace": [],
+    "post_nullspace": [],
+    "added_gauge_constraints": [],
+    "singular_values_before": [
+      1059.8740521590846,
+      973.7159305684595,
+      471.571160488815,
+      7.114255303027241,
+      4.726222818207632,
+      4.370332701239164
+    ],
+    "singular_values_after": [
+      1059.8740521590846,
+      973.7159305684595,
+      471.571160488815,
+      7.114255303027241,
+      4.726222818207632,
+      4.370332701239164
+    ],
+    "connected_shell_components": 1,
+    "component_node_counts": [
+      304
+    ]
+  }
+}

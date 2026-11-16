@@ -1,0 +1,35 @@
+RVE Studio 1.0 — START HERE
+=====================
+
+RVE Studio: composite cellular core design. Strain-energy homogenisation of laminated-composite cellular cores,
+reliability rating of the wall model, FE design & validation with mesh-convergence verdicts, design databases
+and multi-objective screening.
+
+WINDOWS
+-------
+1. Install 64-bit Python 3.10 or newer (python.org).
+2. Extract the archive and open the RVE Studio folder.
+3. Double-click install_windows.bat (once).
+4. Double-click START_RVE_STUDIO.bat.
+If the window does not open, run diagnose_startup.bat.
+
+ANY PLATFORM
+------------
+  pip install .            then   rvestudio-gui      (GUI)   or   rvestudio --help   (command line)
+
+FIRST CHECKS
+------------
+  rvestudio benchmark                          84/84 benchmark values within 0.3 % (original model)
+  rvestudio benchmark --wall-beam timoshenko --bending twist-corrected
+  python -m pytest
+
+DOCUMENTATION
+-------------
+  docs/USER_GUIDE.md   (PDF: docs/pdf/RVE_Studio_User_Guide.pdf)       every workspace, step by step
+  docs/THEORY.md       (PDF: docs/pdf/RVE_Studio_Theory_Guide.pdf)     equations, wall models, limits, mesh convergence
+  docs/API_REFERENCE.md, docs/FE_VERIFICATION.md, docs/DEVELOPER_GUIDE.md
+
+SOURCE MODEL
+------------
+Sriharan, Dias, Fernando, Adhikari (2024), Engineering Structures 299, 117106.
+https://doi.org/10.1016/j.engstruct.2023.117106

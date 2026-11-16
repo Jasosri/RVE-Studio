@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ruff_cache/
+*.log
+# user studies and generated databases
+/Study*/
+/data/*_python.csv
+/data/RVE_*_python*.csv

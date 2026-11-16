@@ -1,0 +1,169 @@
+{
+  "model": {
+    "name": "P00738",
+    "nodes": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -50.142771810441076,
+        95.61469720357701
+      ],
+      [
+        100.28554362088215,
+        0.0
+      ],
+      [
+        50.142771810441076,
+        95.61469720357701
+      ],
+      [
+        0.0,
+        66.66475440090488
+      ]
+    ],
+    "a1": [
+      100.28554362088215,
+      0.0
+    ],
+    "a2": [
+      -50.142771810441076,
+      95.61469720357701
+    ],
+    "height": 150.0,
+    "periodic_tol": 1e-08,
+    "anchor_node": 0,
+    "fix_anchor_rotation": false,
+    "periodic_pairs": null,
+    "wall_element_type": "paper",
+    "strip_bending_mode": "cylindrical",
+    "length_unit": "mm",
+    "gravity": 9.80665,
+    "elements": [
+      {
+        "node_i": 0,
+        "node_j": 4,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 1,
+        "node_j": 4,
+        "laminate": 1,
+        "weight": 1.0
+      },
+      {
+        "node_i": 3,
+        "node_j": 4,
+        "laminate": 2,
+        "weight": 1.0
+      }
+    ],
+    "wall_groups": [
+      "vertical-L1",
+      "inclined-L2-A",
+      "inclined-L2-B"
+    ]
+  },
+  "materials": [
+    {
+      "name": "E-glass/Epoxy",
+      "E1": 38600.0,
+      "E2": 8270.0,
+      "G12": 4140.0,
+      "nu12": 0.26,
+      "Gth": 4140.0,
+      "density_kg_m3": 1800.0,
+      "source": "Source-matched published lamina property table",
+      "source_url": "https://citeseerx.ist.psu.edu/document?doi=520a4c1f50739fb802eba043be3e75c8527f1246&repid=rep1&type=pdf",
+      "cost_per_kg": 1.0
+    },
+    {
+      "name": "Boron/Epoxy",
+      "E1": 204000.0,
+      "E2": 18500.0,
+      "G12": 5590.0,
+      "nu12": 0.23,
+      "Gth": 5590.0,
+      "density_kg_m3": 2080.0,
+      "source": "Source-matched published lamina property table",
+      "source_url": "https://citeseerx.ist.psu.edu/document?doi=520a4c1f50739fb802eba043be3e75c8527f1246&repid=rep1&type=pdf",
+      "cost_per_kg": 3.0
+    },
+    {
+      "name": "Carbon/Epoxy example",
+      "E1": 131000.0,
+      "E2": 10300.0,
+      "G12": 6900.0,
+      "nu12": 0.22,
+      "Gth": 6900.0,
+      "density_kg_m3": NaN,
+      "source": "Existing example; verify density before mass calculations",
+      "source_url": "",
+      "cost_per_kg": 2.0
+    }
+  ],
+  "laminates": [
+    {
+      "name": "Wall 1",
+      "plies": [
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 45.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        }
+      ]
+    },
+    {
+      "name": "Wall 2",
+      "plies": [
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 45.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        }
+      ]
+    },
+    {
+      "name": "Wall 3",
+      "plies": [
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 45.0,
+          "thickness": 0.7445417633080087
+        },
+        {
+          "material": "Boron/Epoxy",
+          "angle_deg": 0.0,
+          "thickness": 0.7445417633080087
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "seed": 20261030,
+  "target_matrix": [
+    [
+      480.88598676,
+      472.50408417,
+      63.01036855,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      472.50408417,
+      480.88598676,
+      63.01036855,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      63.01036855,
+      63.01036855,
+      840.2163925,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      119.5632,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      119.5632,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      4.19095129
+    ]
+  ],
+  "geometry_ranges": {
+    "HEX": [
+      [
+        35,
+        70
+      ],
+      [
+        35,
+        70
+      ]
+    ],
+    "SQUARE": [
+      [
+        35,
+        70
+      ],
+      [
+        35,
+        70
+      ]
+    ],
+    "MIXED": [
+      [
+        30,
+        60
+      ],
+      [
+        1.5,
+        2.5
+      ]
+    ],
+    "TRI": [
+      [
+        35,
+        70
+      ],
+      [
+        0.8,
+        1.2
+      ]
+    ]
+  },
+  "materials": {
+    "Glass": [
+      "E-glass/Epoxy"
+    ],
+    "Boron": [
+      "Boron/Epoxy"
+    ],
+    "Hybrid_GBG": [
+      "E-glass/Epoxy",
+      "Boron/Epoxy",
+      "E-glass/Epoxy"
+    ],
+    "Hybrid_BGB": [
+      "Boron/Epoxy",
+      "E-glass/Epoxy",
+      "Boron/Epoxy"
+    ]
+  },
+  "ply_counts": [
+    3,
+    5,
+    7,
+    9
+  ],
+  "angle_options": [
+    0,
+    45,
+    -45,
+    90
+  ],
+  "minimum_wall_mm": 0.35,
+  "minimum_ply_mm": 0.08,
+  "max_thickness_ratio": 1.9,
+  "max_relative_density": 0.15,
+  "cost_cap_arbitrary_per_m2": 50.0,
+  "minimum_stiffness_factor": 1.05,
+  "buckling_safety_factor": 1.5,
+  "loads_MPa": {
+    "uniaxial": [
+      -1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "biaxial": [
+      -1.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "combined": [
+      -1.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.25
+    ]
+  },
+  "solver": "paper cylindrical ONLY"
+}

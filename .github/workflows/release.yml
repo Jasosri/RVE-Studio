@@ -1,0 +1,93 @@
+name: Release
+
+# Push a tag such as v1.0.0: the tests run, the wheel, sdist and PDF guides are built and attached to a GitHub
+# release (run it by hand from the Actions tab to get the Windows installer as a download without releasing).
+# With the Zenodo-GitHub integration switched on for this repository, Zenodo archives every published
+# release and mints a DOI (metadata from .zenodo.json).
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Qt system libraries
+        run: sudo apt-get update && sudo apt-get install -y libegl1 libgl1 libxkbcommon0 libfontconfig1 libdbus-1-3
+      - name: Test
+        run: |
+          pip install -e ".[dev]" build
+          pytest -q
+          python -c "from rvestudio.api import benchmark; r = benchmark(tolerance_pct=0.3); print(r['within_tolerance'], 'of', r['total']); assert r['passed']"
+      - name: Version matches tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          v=$(python -c "import rvestudio; print(rvestudio.__version__)")
+          test "v$v" = "${GITHUB_REF_NAME}" || { echo "rvestudio.__version__ ($v) does not match tag ${GITHUB_REF_NAME}"; exit 1; }
+      - name: Build wheel and sdist
+        run: python -m build
+      - name: Build PDF guides
+        run: |
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-extra fonts-dejavu lmodern
+          bash docs/build_pdfs.sh
+      - name: GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*
+            docs/pdf/*.pdf
+          generate_release_notes: true
+
+  windows-installer:
+    # Windows application (PyInstaller) and installer (Inno Setup), attached to the same release.
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the application
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install . pyinstaller
+          pyinstaller --noconfirm --clean RVE_Studio.spec
+      - name: Smoke test the frozen application (imports and opens the main window off-screen)
+        shell: pwsh
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          $p = Start-Process -FilePath dist\RVE_Studio\RVE_Studio.exe -PassThru
+          Start-Sleep -Seconds 25
+          if ($p.HasExited) { Get-Content "$env:USERPROFILE\.rve_studio_v1\RVE_Studio_STARTUP_ERROR.txt" -ErrorAction SilentlyContinue; throw "RVE_Studio.exe exited during start-up (code $($p.ExitCode))" }
+          Stop-Process -Id $p.Id -Force
+      - name: Build the installer
+        shell: pwsh
+        run: |
+          $v = python -c "import rvestudio; print(rvestudio.__version__)"
+          if (-not (Get-Command iscc -ErrorAction SilentlyContinue)) { choco install innosetup -y --no-progress }
+          $iscc = (Get-Command iscc -ErrorAction SilentlyContinue).Source
+          if (-not $iscc) { $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" }
+          & $iscc "/DAppVersion=$v" installer\RVE_Studio.iss
+          if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed" }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RVE_Studio_Windows_installer
+          path: dist/RVE_Studio_Setup_*.exe
+      - name: Attach the installer to the GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/RVE_Studio_Setup_*.exe

@@ -1,0 +1,48 @@
+RVE Studio 1.0.0
+===================
+
+Core solver / API
+  rvestudio/api.py
+  rvestudio/models.py
+  rvestudio/laminate.py
+  rvestudio/walls.py
+  rvestudio/periodic.py
+  rvestudio/homogenization.py
+  rvestudio/properties.py
+  rvestudio/load_recovery.py
+  rvestudio/buckling.py
+  rvestudio/database.py
+
+Reference/benchmark
+  data/benchmark_all14_detail.csv
+  data/benchmark_all14_summary.csv
+  VALIDATION_REPORT.txt
+
+GUI/installation
+  rvestudio/gui/main_window.py
+  launch_rve_studio.py
+  START_RVE_STUDIO.bat
+  install_windows.bat
+  RVE_Studio.spec
+
+Docs
+  README.md
+  START_HERE.txt
+  docs/THEORY.md
+  docs/USER_GUIDE.md
+  docs/API_REFERENCE.md
+  docs/DEVELOPER_GUIDE.md
+
+Tests
+  tests/test_all14.py
+  tests/test_anisotropic_strip.py
+  tests/test_buckling.py
+  tests/test_database.py
+  tests/test_geometry_analysis.py
+  tests/test_gui_smoke.py
+  tests/test_laminate.py
+  tests/test_load_recovery.py
+  tests/test_paper_config1.py
+  tests/test_parametric_geometry.py
+  tests/test_postprocess.py
+  tests/test_public_api.py

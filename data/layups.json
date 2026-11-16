@@ -1,0 +1,8 @@
+[
+  {"active": true, "id": 1, "angles": [45,-45,0,-45,45], "description": "[45/-45/0/-45/45]"},
+  {"active": true, "id": 2, "angles": [0,0,90,0,0], "description": "[0/0/90/0/0]"},
+  {"active": true, "id": 3, "angles": [90,0,0,0,90], "description": "[90/0/0/0/90]"},
+  {"active": true, "id": 4, "angles": [0,45,90,45,0], "description": "[0/45/90/45/0]"},
+  {"active": true, "id": 5, "angles": [45,0,90,0,45], "description": "[45/0/90/0/45]"},
+  {"active": true, "id": 6, "angles": [45,-45,45,-45,45], "description": "[45/-45/45/-45/45]"}
+]

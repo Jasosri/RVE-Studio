@@ -1,0 +1,36 @@
+{
+  "title": "RVE Studio: open-source strain-energy homogenisation, FE validation and design of laminated-composite cellular cores",
+  "description": "<p>RVE Studio computes the effective stiffness of laminated-composite cellular cores (honeycombs and any periodic wall network) by strain-energy homogenisation of a periodic RVE, rates the reliability of the one-dimensional wall model (bend–twist index, membrane–bending coupling, wall shear parameter), validates designs against periodic shell finite elements (built-in solver or Abaqus) with Richardson extrapolation, GCI and a mesh-convergence verdict, and generates and screens large design databases (Ashby plots, sensitivity, Pareto and robust multi-objective screening, wall buckling). Desktop application (PySide6), command line and Python API.</p>",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Sriharan, Jasotharan",
+      "orcid": "0000-0003-1925-5647",
+      "affiliation": "School of Engineering, University of Edinburgh"
+    }
+  ],
+  "keywords": [
+    "homogenisation",
+    "honeycomb",
+    "cellular core",
+    "sandwich structures",
+    "composite laminates",
+    "representative volume element",
+    "periodic boundary conditions",
+    "finite element validation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1016/j.engstruct.2023.117106",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/j.compstruct.2024.118629",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ],
+  "version": "1.0.0"
+}

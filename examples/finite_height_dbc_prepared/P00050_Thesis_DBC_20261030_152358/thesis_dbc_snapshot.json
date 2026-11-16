@@ -1,0 +1,762 @@
+{
+  "mode": "thesis_table_3_4_prescribed_displacement_validation",
+  "source": "Chapter 3, Table 3.4",
+  "model": {
+    "name": "P00050",
+    "nodes": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -45.46633369868303,
+        78.75
+      ],
+      [
+        90.93266739736606,
+        0.0
+      ],
+      [
+        45.46633369868303,
+        78.75
+      ],
+      [
+        0.0,
+        52.5
+      ]
+    ],
+    "elements": [
+      {
+        "node_i": 0,
+        "node_j": 4,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 1,
+        "node_j": 4,
+        "laminate": 1,
+        "weight": 1.0
+      },
+      {
+        "node_i": 3,
+        "node_j": 4,
+        "laminate": 2,
+        "weight": 1.0
+      }
+    ],
+    "a1": [
+      90.93266739736606,
+      0.0
+    ],
+    "a2": [
+      -45.46633369868303,
+      78.75
+    ],
+    "height": 150.0
+  },
+  "dbc_model": {
+    "nodes": [
+      [
+        22.733166849341515,
+        39.375
+      ],
+      [
+        0.0,
+        26.25
+      ],
+      [
+        68.19950054802455,
+        0.0
+      ],
+      [
+        68.19950054802455,
+        13.124999999999996
+      ],
+      [
+        90.93266739736606,
+        26.25
+      ],
+      [
+        22.733166849341515,
+        78.75
+      ]
+    ],
+    "elements": [
+      {
+        "node_i": 0,
+        "node_j": 1,
+        "laminate": 2,
+        "weight": 1.0
+      },
+      {
+        "node_i": 2,
+        "node_j": 3,
+        "laminate": 0,
+        "weight": 1.0
+      },
+      {
+        "node_i": 0,
+        "node_j": 3,
+        "laminate": 1,
+        "weight": 1.0
+      },
+      {
+        "node_i": 4,
+        "node_j": 3,
+        "laminate": 2,
+        "weight": 1.0
+      },
+      {
+        "node_i": 0,
+        "node_j": 5,
+        "laminate": 0,
+        "weight": 1.0
+      }
+    ],
+    "a1": [
+      90.93266739736606,
+      0.0
+    ],
+    "a2": [
+      0.0,
+      78.75
+    ],
+    "height": 150.0
+  },
+  "domain": {
+    "mode": "thesis_table_3_4_DBC",
+    "top_bottom_periodic": false,
+    "finite_height_core_validation": true,
+    "p": 90.93266739736606,
+    "q": 78.75,
+    "r_signed": -45.46633369868303,
+    "height": 150.0,
+    "rve_area": 7160.947557542578,
+    "rve_volume": 1074142.1336313866,
+    "primitive_area": 7160.947557542571,
+    "area_consistency_relative_error": 8.890531401399178e-16,
+    "expected_wall_length": 157.5,
+    "actual_wall_length": 157.5,
+    "wall_measure_relative_error": 0.0,
+    "phase_shift_primitive_fraction": [
+      0.5,
+      0.5
+    ],
+    "phase_shift_local": [
+      22.733166849341515,
+      39.375
+    ],
+    "generated_nodes": 6,
+    "generated_walls": 5,
+    "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+  },
+  "settings": {
+    "element_type": "S4",
+    "mesh_size": 10.0,
+    "displacement": 1.0,
+    "cpus": 1,
+    "save_odb": true,
+    "minimal_rigid_body_stabilization": true
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "Q11",
+      "deck_meta": {
+        "case": "Q11",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 65,
+        "minimal_rigid_body_stabilization": [
+          {
+            "node": 1,
+            "dof": 3,
+            "value": 0.0,
+            "rank_before": 5,
+            "rank_after": 6
+          }
+        ],
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 5,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [
+            [
+              -3.9489629769767194e-15,
+              1.937292699962428e-15,
+              0.9999999999999999,
+              1.1102230246251565e-16,
+              5.718374236816827e-17,
+              1.2945436214700618e-17
+            ]
+          ],
+          "post_nullspace": [],
+          "added_gauge_constraints": [
+            {
+              "node": 1,
+              "dof": 3,
+              "value": 0.0,
+              "rank_before": 5,
+              "rank_after": 6
+            }
+          ],
+          "singular_values_before": [
+            566.8626960053342,
+            498.0193034693817,
+            177.2924732462066,
+            2.9619878243485656,
+            1.8875401471154036,
+            1.889776884899774e-14
+          ],
+          "singular_values_after": [
+            567.2105980304809,
+            499.56591550921144,
+            177.65766216266465,
+            2.989150564573951,
+            1.8903206009567637,
+            0.9837607290751266
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "01_Q11"
+    },
+    {
+      "index": 2,
+      "name": "Q22",
+      "deck_meta": {
+        "case": "Q22",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 65,
+        "minimal_rigid_body_stabilization": [
+          {
+            "node": 1,
+            "dof": 3,
+            "value": 0.0,
+            "rank_before": 5,
+            "rank_after": 6
+          }
+        ],
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 5,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [
+            [
+              -3.9489629769767194e-15,
+              1.937292699962428e-15,
+              0.9999999999999999,
+              1.1102230246251565e-16,
+              5.718374236816827e-17,
+              1.2945436214700618e-17
+            ]
+          ],
+          "post_nullspace": [],
+          "added_gauge_constraints": [
+            {
+              "node": 1,
+              "dof": 3,
+              "value": 0.0,
+              "rank_before": 5,
+              "rank_after": 6
+            }
+          ],
+          "singular_values_before": [
+            566.8626960053342,
+            498.0193034693817,
+            177.2924732462066,
+            2.9619878243485656,
+            1.8875401471154036,
+            1.889776884899774e-14
+          ],
+          "singular_values_after": [
+            567.2105980304809,
+            499.56591550921144,
+            177.65766216266465,
+            2.989150564573951,
+            1.8903206009567637,
+            0.9837607290751266
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "02_Q22"
+    },
+    {
+      "index": 3,
+      "name": "Q12",
+      "deck_meta": {
+        "case": "Q12",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 65,
+        "minimal_rigid_body_stabilization": [
+          {
+            "node": 1,
+            "dof": 3,
+            "value": 0.0,
+            "rank_before": 5,
+            "rank_after": 6
+          }
+        ],
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 5,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [
+            [
+              -3.9489629769767194e-15,
+              1.937292699962428e-15,
+              0.9999999999999999,
+              1.1102230246251565e-16,
+              5.718374236816827e-17,
+              1.2945436214700618e-17
+            ]
+          ],
+          "post_nullspace": [],
+          "added_gauge_constraints": [
+            {
+              "node": 1,
+              "dof": 3,
+              "value": 0.0,
+              "rank_before": 5,
+              "rank_after": 6
+            }
+          ],
+          "singular_values_before": [
+            566.8626960053342,
+            498.0193034693817,
+            177.2924732462066,
+            2.9619878243485656,
+            1.8875401471154036,
+            1.889776884899774e-14
+          ],
+          "singular_values_after": [
+            567.2105980304809,
+            499.56591550921144,
+            177.65766216266465,
+            2.989150564573951,
+            1.8903206009567637,
+            0.9837607290751266
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "03_Q12"
+    },
+    {
+      "index": 4,
+      "name": "Q66",
+      "deck_meta": {
+        "case": "Q66",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 97,
+        "minimal_rigid_body_stabilization": [
+          {
+            "node": 1,
+            "dof": 3,
+            "value": 0.0,
+            "rank_before": 5,
+            "rank_after": 6
+          }
+        ],
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 5,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [
+            [
+              -3.2405039351099276e-15,
+              8.499029350212666e-15,
+              1.0,
+              1.2753591342306939e-16,
+              2.9795836481223885e-17,
+              -3.0653446065310306e-17
+            ]
+          ],
+          "post_nullspace": [],
+          "added_gauge_constraints": [
+            {
+              "node": 1,
+              "dof": 3,
+              "value": 0.0,
+              "rank_before": 5,
+              "rank_after": 6
+            }
+          ],
+          "singular_values_before": [
+            762.2894246169003,
+            557.2207224681645,
+            325.6804163722261,
+            3.9610717791315637,
+            2.734203954645388,
+            8.953402722766985e-15
+          ],
+          "singular_values_after": [
+            762.4135021982884,
+            558.6782341499415,
+            326.0661296744686,
+            3.9747193837129084,
+            2.752921797869931,
+            0.9858799882978893
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "04_Q66"
+    },
+    {
+      "index": 5,
+      "name": "Q44",
+      "deck_meta": {
+        "case": "Q44",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 220,
+        "minimal_rigid_body_stabilization": null,
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 6,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [],
+          "post_nullspace": [],
+          "added_gauge_constraints": [],
+          "singular_values_before": [
+            1048.641271944782,
+            977.5382358813032,
+            459.3934960234785,
+            7.041674524498657,
+            4.6877767246807105,
+            4.600483773144146
+          ],
+          "singular_values_after": [
+            1048.641271944782,
+            977.5382358813032,
+            459.3934960234785,
+            7.041674524498657,
+            4.6877767246807105,
+            4.600483773144146
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "05_Q44"
+    },
+    {
+      "index": 6,
+      "name": "Q55",
+      "deck_meta": {
+        "case": "Q55",
+        "p": 90.93266739736606,
+        "q": 78.75,
+        "height": 150.0,
+        "rve_area": 7160.947557542578,
+        "rve_volume": 1074142.1336313866,
+        "boundary_sets": {
+          "X1_0": 16,
+          "X1_P": 16,
+          "X2_0": 16,
+          "X2_Q": 16,
+          "X3_0": 19,
+          "X3_H": 19
+        },
+        "specified_translation_constraints": 220,
+        "minimal_rigid_body_stabilization": null,
+        "rigid_body_audit": {
+          "pre_stabilization_rank": 6,
+          "post_stabilization_rank": 6,
+          "required_rank": 6,
+          "pre_nullspace": [],
+          "post_nullspace": [],
+          "added_gauge_constraints": [],
+          "singular_values_before": [
+            1059.8740521590846,
+            973.7159305684595,
+            471.571160488815,
+            7.114255303027241,
+            4.726222818207632,
+            4.370332701239164
+          ],
+          "singular_values_after": [
+            1059.8740521590846,
+            973.7159305684595,
+            471.571160488815,
+            7.114255303027241,
+            4.726222818207632,
+            4.370332701239164
+          ],
+          "connected_shell_components": 1,
+          "component_node_counts": [
+            304
+          ]
+        },
+        "domain": {
+          "mode": "thesis_table_3_4_DBC",
+          "top_bottom_periodic": false,
+          "finite_height_core_validation": true,
+          "p": 90.93266739736606,
+          "q": 78.75,
+          "r_signed": -45.46633369868303,
+          "height": 150.0,
+          "rve_area": 7160.947557542578,
+          "rve_volume": 1074142.1336313866,
+          "primitive_area": 7160.947557542571,
+          "area_consistency_relative_error": 8.890531401399178e-16,
+          "expected_wall_length": 157.5,
+          "actual_wall_length": 157.5,
+          "wall_measure_relative_error": 0.0,
+          "phase_shift_primitive_fraction": [
+            0.5,
+            0.5
+          ],
+          "phase_shift_local": [
+            22.733166849341515,
+            39.375
+          ],
+          "generated_nodes": 6,
+          "generated_walls": 5,
+          "coordinate_frame": "local x1 parallel to a1; x2 perpendicular to a1"
+        },
+        "mesh_node_count": 304,
+        "mesh_element_count": 270,
+        "table_3_4_statement": "all unspecified degrees of freedom remain free; shell rotations are not prescribed",
+        "boundary_physics": "finite_height_core_published_DBC",
+        "top_bottom_periodic": false
+      },
+      "directory": "06_Q55"
+    }
+  ]
+}

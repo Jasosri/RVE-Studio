@@ -1,0 +1,51 @@
+v1.11.0 validation: 120 Python tests passed, 9 GUI tests skipped (PySide6 could not be installed in the build
+environment; the new GUI actions were exercised headless with a Qt stand-in). Run python -m pytest on a machine
+with PySide6 to include the GUI tests.
+
+v1.8.0 merge validation: 71 Python tests passed, 7 GUI smoke tests skipped (PySide6 unavailable).
+Symmetry-checked SQUARE and MIXED rectangular FE decks: 21 states each, both PBC audits passed.
+P00050 unrestricted rectangular cut: 21 states, PBC audit passed.
+Abaqus job results: NONE — pending licensed solver.
+
+RVE Studio — PUBLICATION BENCHMARK
+===================================
+Research basis: Sriharan, J., Dias, M., Fernando, D., and Adhikari, S. (2024)
+"A unified approach for the prediction of the effective properties of
+laminated composite cellular core," Engineering Structures 299, 117106.
+DOI: 10.1016/j.engstruct.2023.117106
+Source: https://www.sciencedirect.com/science/article/pii/S0141029623015213
+
+Journal Eq. (5) defines shell shear Q44 = C1313 (13), Q55 = C2323 (23).
+Internal 3D Voigt remains [11,22,33,23,13,12].
+
+Reference: 14 published proposed strain-energy sets, 6 stiffness terms each.
+Tolerance: +/-1% (user-adjustable reporting threshold).
+Wall beam: Euler-Bernoulli (the published model; default).
+Within tolerance: 84/84.
+All within tolerance: True.
+Largest absolute discrepancy vs paper: 0.284556% (Q66, configuration 6).
+
+Property  MAE_pct  MaxAbs_pct  Within_tolerance  Cases
+     Q11 0.043497    0.044955                14     14
+     Q22 0.043497    0.044955                14     14
+     Q12 0.043180    0.044953                14     14
+     Q66 0.127231    0.284556                14     14
+     Q44 0.042288    0.108439                14     14
+     Q55 0.042288    0.108439                14     14
+
+Timoshenko walls (wall shear flexibility, option): 70/84 within +/-1%. Q11, Q22, Q12 change by < 0.2%,
+Q44 and Q55 not at all; the 14 Q66 values are 1.2-14.5% below the published model.
+
+Against the published shell FE (mean absolute Q66 error): published model 11.31%, Euler-Bernoulli 11.42%,
+Timoshenko 8.55%, Timoshenko anisotropic strip 4.61%, Timoshenko free moment 17.61%.
+
+Interpretation
+--------------
+Euler-Bernoulli walls reproduce the published proposed model; Timoshenko walls are the better comparison
+with shell FE, whose walls are shear-flexible. This is a comparison with PUBLISHED PROPOSED-MODEL values;
+a configurable acceptance threshold is not independent accuracy certification.
+Existing geometry, buckling screening, and GUI functions were retained.
+
+Reproduce: python -m rvestudio.cli benchmark --tolerance 1 --csv data/benchmark_all14_detail.csv
+Tests: python -m pytest
+Qt GUI smoke tests are skipped if PySide6 is not installed in test environment.

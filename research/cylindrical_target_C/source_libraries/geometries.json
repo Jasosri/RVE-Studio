@@ -1,0 +1,118 @@
+[
+  {
+    "active": true,
+    "id": "HEX",
+    "name": "Hexagonal",
+    "parameters": [
+      {
+        "name": "L1",
+        "min": 35,
+        "max": 70
+      },
+      {
+        "name": "L2",
+        "min": 35,
+        "max": 70
+      }
+    ],
+    "weight": 1,
+    "solver": "paper",
+    "strip_mode": "cylindrical",
+    "description": "Built-in hexagonal family. L1 = wall length normal to a1; L2 = inclined-wall length."
+  },
+  {
+    "active": true,
+    "id": "SQUARE",
+    "name": "Square-family",
+    "parameters": [
+      {
+        "name": "Lx",
+        "min": 35,
+        "max": 70
+      },
+      {
+        "name": "Ly",
+        "min": 35,
+        "max": 70
+      }
+    ],
+    "weight": 1,
+    "solver": "paper",
+    "strip_mode": "cylindrical",
+    "description": "Built-in square/rectangular family. Lx = wall length parallel to a1; Ly = wall length normal to a1."
+  },
+  {
+    "active": true,
+    "id": "MIXED",
+    "name": "Mixed rhombus-triangular",
+    "parameters": [
+      {
+        "name": "Lh",
+        "min": 30,
+        "max": 60
+      },
+      {
+        "name": "R",
+        "min": 1.5,
+        "max": 2.5
+      }
+    ],
+    "weight": 1,
+    "solver": "paper",
+    "strip_mode": "cylindrical",
+    "description": "Built-in mixed rhombus-triangular family. Lh = reference wall length parallel to a1; R = Ld/Lh for inclined-wall length Ld."
+  },
+  {
+    "active": true,
+    "id": "TRI",
+    "name": "Triangular-family",
+    "parameters": [
+      {
+        "name": "Lh",
+        "min": 35,
+        "max": 70
+      },
+      {
+        "name": "R",
+        "min": 0.8,
+        "max": 1.2
+      }
+    ],
+    "weight": 1,
+    "solver": "paper",
+    "strip_mode": "cylindrical",
+    "description": "Built-in triangular family. Lh = reference wall length parallel to a1; R = Ld/Lh for inclined-wall length Ld."
+  },
+  {
+    "active": false,
+    "id": "NODESELECT",
+    "name": "Node-count selector (3\u201310)",
+    "function": "NODESELECT",
+    "parameters": [
+      {
+        "name": "NodeCount",
+        "min": 3,
+        "max": 10
+      },
+      {
+        "name": "StretchX",
+        "min": 0.85,
+        "max": 1.15
+      },
+      {
+        "name": "StretchY",
+        "min": 0.85,
+        "max": 1.15
+      },
+      {
+        "name": "Shear",
+        "min": -0.12,
+        "max": 0.12
+      }
+    ],
+    "weight": 1.0,
+    "solver": "paper",
+    "strip_mode": "cylindrical",
+    "description": "3\u201310 node seeded periodic graphs, with affine node-position changes. Opt in: activate row and choose fixed NodeCount min=max. Results are not globally optimal."
+  }
+]
